@@ -2,9 +2,6 @@
 //
 
 #include <iostream>
-#include <cstring>
-#include <cstdlib>
-#include <iomanip>
 #include <cmath>
 #include <vector>
 
