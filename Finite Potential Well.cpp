@@ -21,21 +21,25 @@ int main()
 	vector<double> result;
 
 	cout << "Please enter your Finite Energy Well (eV) and your Width of the Well (nm): ";
-	cin >> U >> L;
+	cin >> U >> L; // user enter the finite energy level and length of the well range 
 	cout << "Thank you.\n";
 	
 	while (E < U) {
 
+		// estimation check if both equations come up with a same result within the range plus or minus 0.01
 		if (((2 * pow((U * E - E * E), 0.50)) / (2 * E - U)) < (tan(pow((two_h_bar_times_mass * E * L * L), 0.50)) + 0.01) && 
 			((2 * pow((U * E - E * E), 0.50)) / (2 * E - U)) > (tan(pow((two_h_bar_times_mass * E * L * L), 0.50)) - 0.01)) {
 
+			// store the evaluated into the array
 			result.push_back(E);
 
 		}
 
+		// increase the testing E
 		E += test_increment;
 	}
 	
+	// output the result 
 	cout << "Your result comes to: \n";
 	for (int i = 0; i < result.size(); i++)
 	{
